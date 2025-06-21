@@ -20,9 +20,9 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
-  title: "MAMADOU SY - Développeur Full Stack",
+  title: "MAMADOU SY - Développeur Full Stack et Mobile",
   description:
-    "Portfolio de Mamadou SY, développeur web fullstack spécialisé en React, Next.js, et technologies modernes",
+    "Portfolio de Mamadou SY, développeur web fullstack et mobile spécialisé en React, Next.js, et technologies modernes",
   icons: {
     icon: "/msy.jpeg",
     shortcut: "/msy.jpeg",

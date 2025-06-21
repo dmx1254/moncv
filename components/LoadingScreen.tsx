@@ -173,7 +173,7 @@ export const LoadingScreen = () => {
         </div>
 
         {/* Barre de progression */}
-        <div className="mt-8 w-64 h-1 bg-gray-800 dark:bg-gray-700 light:bg-gray-300 rounded-full overflow-hidden">
+        <div className="mt-8 w-full h-1 bg-gray-800 dark:bg-gray-700 light:bg-gray-300 rounded-full overflow-hidden">
           <div 
             ref={progressRef}
             className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full w-0"
