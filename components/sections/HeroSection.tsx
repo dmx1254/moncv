@@ -190,9 +190,9 @@ export const HeroSection = () => {
                 <div className="absolute inset-0 bg-cyan-400/20 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
               </button>
               <button className="group relative px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105">
-                <Link href="/cv/cv_mamadousy.pdf" className="relative z-10">
+                <a href="/cv/cv_mamadousy.pdf" download className="relative z-10">
                   Télécharger CV
-                </Link>
+                </a>
                 {/* <div className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
                 <div className="absolute inset-0 bg-cyan-400/20 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
               </button>

@@ -65,13 +65,13 @@ export const SkillsSection = () => {
     "html5",
     "css3",
     "sass",
-    
+
     // Développement Mobile
     "flutter",
     "dart",
     "android",
     "react",
-    
+
     // Intelligence Artificielle
     "python",
     "tensorflow",
@@ -106,7 +106,7 @@ export const SkillsSection = () => {
     "n8n",
     "zapier",
     "make",
-    
+
     // Base de données & Cloud
     "mongodb",
     "mysql",
@@ -116,7 +116,7 @@ export const SkillsSection = () => {
     "docker",
     "vercel",
     "nginx",
-    
+
     // Outils & Méthodes
     "git",
     "github",
@@ -129,12 +129,10 @@ export const SkillsSection = () => {
     "cypress",
     "testinglibrary",
     "sonarqube",
-    "prisma"
+    "prisma",
   ];
 
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}`
-  );
+  const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}`);
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 relative">
@@ -143,7 +141,7 @@ export const SkillsSection = () => {
         {/* Circuit board lines */}
         <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
         <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-        
+
         {/* Floating tech icons */}
         <div className="absolute top-1/4 right-1/4 text-cyan-400/10 text-4xl font-mono animate-float">
           &lt;/&gt;
@@ -159,7 +157,7 @@ export const SkillsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 
+          <h2
             ref={titleRef}
             className="text-4xl lg:text-5xl font-bold text-white mb-6"
           >
@@ -172,7 +170,7 @@ export const SkillsSection = () => {
               compétences
             </AuroraText>
           </h2>
-          
+
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Développeur full stack passionné par l&apos;innovation
             technologique, spécialisé dans le développement web, mobile et
@@ -210,7 +208,6 @@ export const SkillsSection = () => {
               title: "Développement Mobile",
               skills: [
                 "React Native",
-                "Flutter",
                 "iOS/Android",
                 "Mobile UI/UX",
                 "App Store/Play Store",
@@ -219,29 +216,17 @@ export const SkillsSection = () => {
             },
             {
               title: "Intelligence Artificielle",
-              skills: [
-                "OpenAI API",
-                "LangChain",
-                "Python/ML",
-                "Automatisation IA",
-                "Chatbots IA",
-              ],
+              skills: ["OpenAI API", "Automatisation IA", "Chatbots IA"],
               color: "from-purple-400 to-pink-500",
             },
             {
               title: "Base de Données & Cloud",
-              skills: ["MongoDB", "PostgreSQL", "AWS/Cloud", "Docker", "CI/CD"],
+              skills: ["MongoDB", "PostgreSQL", "AWS/Cloud", "Docker"],
               color: "from-green-400 to-cyan-500",
             },
             {
               title: "Outils & Méthodes",
-              skills: [
-                "Git/GitHub",
-                "Figma/Design",
-                "Agile/Scrum",
-                "Testing",
-                "Performance",
-              ],
+              skills: ["Git/GitHub", "Figma/Design", "Performance"],
               color: "from-orange-400 to-red-500",
             },
             {
@@ -251,7 +236,6 @@ export const SkillsSection = () => {
                 "Mobile Dev",
                 "IA Integration",
                 "API Development",
-                "Architecture",
               ],
               color: "from-pink-400 to-purple-500",
             },
@@ -262,11 +246,11 @@ export const SkillsSection = () => {
             >
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               <h3 className="relative z-10 text-xl font-bold text-white mb-4 text-center">
                 {category.title}
               </h3>
-              
+
               <div className="relative z-10 space-y-2">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="flex items-center space-x-2">
@@ -286,7 +270,7 @@ export const SkillsSection = () => {
           <div className="relative bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/20 overflow-hidden">
             {/* Animated scanning line */}
             <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
-            
+
             <h3 className="text-2xl font-bold text-white mb-6">
               En constante évolution
             </h3>
@@ -297,7 +281,7 @@ export const SkillsSection = () => {
               avec l&apos;IA, le développement mobile cross-platform et les
               architectures cloud modernes.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 "OpenAI GPT",
