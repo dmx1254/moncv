@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Courier_Prime } from "next/font/google";
 import "./globals.css";
 
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,6 +61,19 @@ export const metadata: Metadata = {
     "Développement d'applications fullstack",
     "Développement d'applications mobile",
     "Développement d'applications web",
+
+    "ios Dakar, Senegal",
+    "Android Dakar, Senegal",
+    "Integration API Dakar, Senegal",
+    "Integration IA Dakar, Senegal",
+    "Automatisation Dakar, Senegal",
+    "Développement d'applications Dakar, Senegal",
+    "Développement de sites web Dakar, Senegal",
+    "Développement d'applications mobiles Dakar, Senegal",
+    "Développement d'applications web Dakar, Senegal",
+    "Développement d'applications fullstack Dakar, Senegal",
+    "Développement d'applications mobile Dakar, Senegal",
+    "Développement d'applications web Dakar, Senegal",
   ],
   authors: [{ name: "Mamadou SY" }],
   creator: "Mamadou SY",

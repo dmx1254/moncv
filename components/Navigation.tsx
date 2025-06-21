@@ -7,11 +7,13 @@ import { useGSAP } from "@gsap/react";
 import { Code } from "lucide-react";
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { useTheme } from "@/hooks/use-theme";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Navigation = () => {
   const navRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme } = useTheme();
 
   useGSAP(() => {
@@ -63,7 +65,17 @@ export const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    // Fermer le menu mobile après avoir cliqué sur un lien
+    setIsMobileMenuOpen(false);
   };
+
+  const navigationItems = [
+    { id: "hero", label: "Accueil" },
+    { id: "about", label: "À propos" },
+    { id: "skills", label: "Compétences" },
+    { id: "projects", label: "Projets" },
+    { id: "contact", label: "Contact" }
+  ];
 
   return (
     <nav
@@ -116,13 +128,7 @@ export const Navigation = () => {
 
           {/* Navigation Links with unique design */}
           <div className="hidden md:flex items-center space-x-8">
-            {[
-              { id: "hero", label: "Accueil" },
-              { id: "about", label: "À propos" },
-              { id: "skills", label: "Compétences" },
-              { id: "projects", label: "Projets" },
-              { id: "contact", label: "Contact" }
-            ].map((item) => (
+            {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -141,15 +147,80 @@ export const Navigation = () => {
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
             
-            {/* Mobile menu button with unique design */}
+            {/* Mobile menu with Sheet */}
             <div className="md:hidden">
-              <button className="relative p-2 border border-cyan-400/30 rounded-lg hover:border-cyan-400 transition-colors duration-300">
-                <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
-                  <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
-                  <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
-                  <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
-                </div>
-              </button>
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <button className="relative p-2 border border-cyan-400/30 rounded-lg hover:border-cyan-400 transition-colors duration-300">
+                    <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                      <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
+                      <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
+                      <span className="w-4 h-0.5 bg-cyan-400 transition-all duration-300"></span>
+                    </div>
+                  </button>
+                </SheetTrigger>
+                
+                <SheetContent 
+                  side="right" 
+                  className="w-[85vw] max-w-[300px] bg-black/95 backdrop-blur-xl border-l border-cyan-400/20 p-0"
+                >
+                  <div className="flex flex-col h-full p-6">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="flex items-center space-x-3">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-50"></div>
+                          <div className="relative p-2 bg-black border-2 border-cyan-400 rounded-lg">
+                            <Code className="w-5 h-5 text-cyan-400" />
+                          </div>
+                        </div>
+                        <AuroraText
+                          className="text-lg font-bold"
+                          colors={["#38bdf8", "#818cf8", "#c084fc"]}
+                          speed={1.5}
+                        >
+                          Menu
+                        </AuroraText>
+                      </div>
+                    </div>
+
+                    {/* Navigation Items */}
+                    <nav className="flex-1 overflow-y-auto">
+                      <div className="space-y-2">
+                        {navigationItems.map((item, index) => (
+                          <button
+                            key={item.id}
+                            onClick={() => scrollToSection(item.id)}
+                            className="w-full p-4 text-left border border-cyan-400/20 rounded-lg hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300 group"
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="text-gray-300 group-hover:text-white font-medium transition-colors duration-300">
+                                {item.label}
+                              </span>
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            {/* Animated underline */}
+                            <div className="mt-2 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 w-0 group-hover:w-full transition-all duration-300"></div>
+                          </button>
+                        ))}
+                      </div>
+                    </nav>
+
+                    {/* Footer */}
+                    <div className="mt-6 pt-6 border-t border-cyan-400/20">
+                      <div className="text-center">
+                        <p className="text-gray-400 text-sm">
+                          Développeur Full-Stack & Mobile
+                        </p>
+                        <p className="text-cyan-400 text-xs mt-1">
+                          Spécialisé en React, Next.js, Node.js
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
